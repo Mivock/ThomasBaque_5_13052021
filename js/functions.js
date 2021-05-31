@@ -7,8 +7,15 @@ function priceConversion(productPrice) {
   }).format(`${productPrice}` / 100);
 }
 
-//let price = priceConversion(camera.price);
-
+// var url
 const url = "https://p5-api-tb.herokuapp.com/api/cameras/";
-
 const APIurl = "https://p5-api-tb.herokuapp.com/api/cameras/";
+
+//création de la class pour fonction buyCamera
+class Item {
+  constructor(cameraID, chosenLense, quantity) {
+    this.cameraID = cameraID;
+    this.chosenLense = chosenLense;
+    this.quantity = quantity;
+  }
+}

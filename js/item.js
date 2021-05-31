@@ -9,6 +9,7 @@ async function getAPI() {
       createProduct(data);
       //console.log(APIurl + `${cameraID}`); //pour test;
       lenseOption(data);
+      buyCamera(data);
     });
 }
 
@@ -55,6 +56,26 @@ function lenseOption(data) {
     <option value="${lenses}">${lenses}</option>
   `; //html coupé de la fonction createProduct, penser à mettre cette fontion en dernier sinon html pas encore crée et querySelector ne trouve pas #lenses
   }
+}
+
+function buyCamera(cameraID) {
+  document.querySelector("#buy").addEventListener("click", function () {
+    //écouter #buy onclick et si click exectuer =>
+    let shoppingCart = JSON.parse(localStorage.getItem("shoppingCart")); //création local storage
+    let chosenLense = document.querySelector("#lenses").value; //reference objectif
+    let quantity = document.querySelector("#quantity").value; //reference quantité
+    console.log(chosenLense); //test
+    console.log(quantity); //test
+
+    if (shoppingCart === null) {
+      //!!null important sinon erreur et impossible de push car array pas créé
+      shoppingCart = [];
+    }
+    let item = new Item(cameraID, chosenLense, quantity); // création d'un nouvel item avec les parametres définis (id, objectif, quantité dans le panier)
+    shoppingCart.push(item); //push de l'element item créé dans le array shoppingCart
+    localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart)); //parsing
+    console.log(shoppingCart); //test
+  });
 }
 
 getAPI();
