@@ -24,6 +24,18 @@ function createProduct(data) {
     <select name="lense" id="lenses">
     </select>
     </div>
+    <br>
+    <div class="quantity">
+    <label for="quantity">Quantité :</label>
+      <select name="quantity" id="quantity">
+        <option selected value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+
     <div class="buy d-flex justify-content-between align-items-center">
       <div class="price text-success">
         <h5 class="mt-4">${priceConversion(data.price)}</h5>
@@ -41,7 +53,7 @@ function lenseOption(data) {
       //pas oublier le += pour rajouter tous les objectifs
       ` 
     <option value="${lenses}">${lenses}</option>
-  `; //html coupé de la fonction creatProduct, penser à mettre cette fontion en dernier sinon html pas encore crée et querySelector ne trouve pas #lenses
+  `; //html coupé de la fonction createProduct, penser à mettre cette fontion en dernier sinon html pas encore crée et querySelector ne trouve pas #lenses
   }
 }
 
