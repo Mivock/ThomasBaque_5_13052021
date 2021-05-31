@@ -70,7 +70,8 @@
           <p class="text-center fs-4 text-light bg-secondary">
             OrinoCam - Récapitulatif
           </p>
-          <div class="table-responsive">
+          <div id="basketEmpty" class="text-center"></div>
+          <div class="table-responsive" id="tableBasket">
             <table class="table table-hover my-auto mx-0">
               <thead>
                 <tr class="text-center fs-5">
@@ -79,7 +80,6 @@
                   <th scole="col">Objectif</th>
                   <th scole="col">Quantité</th>
                   <th scole="col">Prix</th>
-                  <th scole="col" class="bg-light">Sous-total</th>
                 </tr>
               </thead>
               <tbody id="basketDisplay">
@@ -89,13 +89,22 @@
                 <tr class="text-center fs-5 bg-light">
                   <th colspan="4" class="bg-white"></th>
                   <th colspan="1">Total :</th>
-                  <th colspan="1" id="totalPrice"></th>
+                  <th colspan="1" id="grandTotal"></th>
                 </tr>
               </tfoot>
             </table>
           </div>
           <!--form-->
-          <form>
+          <form class="container-fluid">
+            <div class="form-group col-md-6">
+              <label for="inputEmail">Adresse e-mail</label>
+              <input
+                type="email"
+                class="form-control"
+                id="inputEmail"
+                placeholder="elon@spacex.com"
+              />
+            </div>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputFirstName">Prénom</label>
@@ -103,7 +112,7 @@
                   type="text"
                   class="form-control"
                   id="inputFirstName"
-                  placeholder="John"
+                  placeholder="Elon"
                 />
               </div>
               <div class="form-group col-md-6">
@@ -112,33 +121,43 @@
                   type="text"
                   class="form-control"
                   id="inputLastName"
-                  placeholder="Smith"
+                  placeholder="Musk"
                 />
               </div>
             </div>
-            <div class="form-group">
+            <div class="form-group col-md-6">
               <label for="inputAddress">Adresse</label>
               <input
                 type="text"
                 class="form-control"
                 id="inputAddress"
-                placeholder="1234 Main St"
+                placeholder="Boulevard de Mars"
               />
             </div>
 
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputCity">Ville</label>
-                <input type="text" class="form-control" id="inputCity" />
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputCity"
+                  placeholder="Los Angeles"
+                />
               </div>
 
               <div class="form-group col-md-2">
                 <label for="inputZip">Code Postal</label>
-                <input type="text" class="form-control" id="inputZip" />
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputZip"
+                  placeholder="90016"
+                />
               </div>
             </div>
             <br />
-
+            <!--buttons-->
             <div class="text-center my-5 row" id="cacheButton">
               <div class="col-12 col-sm-6 my-4">
                 <button
@@ -153,8 +172,6 @@
                 <button
                   type="button"
                   class="btn btn-danger mx-5"
-                  data-bs-toggle="modal"
-                  data-bs-target="#modalClearBasket"
                   id="clearBasket"
                 >
                   Vider le panier
@@ -162,14 +179,21 @@
               </div>
             </div>
           </form>
-          <!--buttons-->
         </div>
       </section>
     </body>
 
+    <!--
+
+
+
+-->
+
+    <div id="test"></div>
+
     <footer class="bg-light text-center text-lg-start">
       <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-        © 2020 Copyright:
+        © 2021 Copyright:
         <a class="text-dark" href="index.html">Orinoco</a>
       </div>
     </footer>
