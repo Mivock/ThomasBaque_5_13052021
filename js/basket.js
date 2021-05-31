@@ -1,0 +1,1 @@
+let clearBasket = document.querySelector("#clearBasket") = localStorage.clear(data);
