@@ -1,8 +1,8 @@
 async function getAPI() {
-  let cameraID = new URLSearchParams(location.search)
-    .toString()
-    .substr(-25, 24); //pour retirer le dernier caractère (=)
+  let cameraID = new URLSearchParams(location.search).get("id");
+  //.substr(-25, 24); //pour retirer le dernier caractère (=)
   //console.log(cameraID.substr(-25, 24));
+
   fetch(APIurl + `${cameraID /*.substr(-25, 24)*/}`)
     .then((response) => response.json())
     .then((data) => {
@@ -13,6 +13,7 @@ async function getAPI() {
     });
 }
 
+//html pour création card produit individuel
 function createProduct(data) {
   document.querySelector("#itemCard").innerHTML = `<img class="card-img" src="${
     data.imageUrl

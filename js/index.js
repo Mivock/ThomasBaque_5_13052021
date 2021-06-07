@@ -16,7 +16,7 @@ function showData(data) {
                         <div class="card-body">
                             <h5 class="card-title">${camera.name}</h5>
                             <p class="card-text">${camera.description}</p> 
-                            <a href="item.html?_${camera._id}" class="btn btn-warning">En savoir plus</a>
+                            <a href="item.html?id=${camera._id}" class="btn btn-warning">En savoir plus</a>
                         </div>
                     </div>`;
   }
